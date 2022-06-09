@@ -4,10 +4,39 @@ import './index.css';
 import App from './App';
 import reportWebVitals from './reportWebVitals';
 
+// context api
+import { DataLayer } from './DataLayer';
+
+//reducer
+const initialState = {
+  user: null,
+  playlists: [],
+  playing: false,
+  item: null
+}
+
+const reducer = (state, action) => {
+  console.log(action);
+
+  //action -> type, payload
+
+  switch(action.type){
+      case 'SET_USER':
+          return {
+              ...state, 
+              user: action.user
+          }
+      default:
+          return state;
+  }
+}
+
 const root = ReactDOM.createRoot(document.getElementById('root'));
 root.render(
   <React.StrictMode>
-    <App />
+    <DataLayer initialState={initialState} reducer={reducer}>
+      <App />
+    </DataLayer>
   </React.StrictMode>
 );
 
