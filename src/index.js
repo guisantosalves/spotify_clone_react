@@ -12,7 +12,8 @@ const initialState = {
   user: null,
   playlists: [],
   playing: false,
-  item: null
+  item: null,
+  token: "BQBdS6xyEFp5JX4VQXZHL861WccRDz7a0FxQp-wSOgBeQOoAnXzuk8IOjihbr5_hRCGWSobBGsgtPrqe7bj7oqGIEYTLtHe7Njryuz84dMfo44qyXbU-Jvu5uLNhzyOcqTSuRXS5WxxYA7NIwPqfcNpyGXeL-aZuP8dPS0vhDbAdfNQDqtNmVs9kzPJEPddIuakZixIL-u9NoewzW4zvHg",
 }
 
 const reducer = (state, action) => {
@@ -26,6 +27,11 @@ const reducer = (state, action) => {
               ...state, 
               user: action.user
           }
+      case 'SET_TOKEN':
+        return{
+          ...state,
+          token: action.token
+        }
       default:
           return state;
   }
