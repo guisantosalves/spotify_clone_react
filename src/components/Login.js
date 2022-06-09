@@ -4,10 +4,6 @@ import { loginUrl, getTokenFromUrl } from "../spotify";
 
 function Login() { 
 
-  const token = getTokenFromUrl();
-
-  console.log(token);
-
   return (
     <div className="login">
       <h1>login page</h1>
