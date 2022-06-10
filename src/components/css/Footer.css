@@ -3,5 +3,6 @@
     bottom: 0;
     height: 65px;
     width: 100%;
-    border: 1px solid orange;
+    padding: 20px;
+    background-color: #282828;
 }
