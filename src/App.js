@@ -14,7 +14,6 @@ const spotify = new SpotifyWebApi();
 
 function App() {
   const [{ user, token }, dispatch] = useDataLayerValue();
-
   //run code based on a given condition
   useEffect(() => {
     const hash = getTokenFromUrl(); // get the hash
@@ -37,14 +36,12 @@ function App() {
         });
       });
 
-      spotify.getUserPlaylists().then((playlist)=>{
-        // dispatch({
-        //   type: "SET_PLAYLIST",
-        //   playlist: playlist
-        // })
-        console.log(playlist)
+      spotify.getUserPlaylists().then((playlist) => {
+        dispatch({
+          type: "SET_PLAYLIST",
+          playlists: playlist,
+        });
       });
-
     }
   }, []);
 

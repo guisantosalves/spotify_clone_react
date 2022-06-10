@@ -1,11 +1,11 @@
-import React from 'react';
-import ReactDOM from 'react-dom/client';
-import './index.css';
-import App from './App';
-import reportWebVitals from './reportWebVitals';
+import React from "react";
+import ReactDOM from "react-dom/client";
+import "./index.css";
+import App from "./App";
+import reportWebVitals from "./reportWebVitals";
 
 // context api
-import { DataLayer } from './DataLayer';
+import { DataLayer } from "./DataLayer";
 
 //reducer
 const initialState = {
@@ -14,30 +14,35 @@ const initialState = {
   playing: false,
   item: null,
   token: null,
-}
+};
 
 const reducer = (state, action) => {
   console.log(action);
 
   //action -> type, payload
 
-  switch(action.type){
-      case 'SET_USER':
-          return {
-              ...state, 
-              user: action.user
-          }
-      case 'SET_TOKEN':
-        return{
-          ...state,
-          token: action.token
-        }
-      default:
-          return state;
+  switch (action.type) {
+    case "SET_USER":
+      return {
+        ...state,
+        user: action.user,
+      };
+    case "SET_TOKEN":
+      return {
+        ...state,
+        token: action.token,
+      };
+    case "SET_PLAYLIST":
+      return {
+        ...state,
+        playlists: action.playlists,
+      };
+    default:
+      return state;
   }
-}
+};
 
-const root = ReactDOM.createRoot(document.getElementById('root'));
+const root = ReactDOM.createRoot(document.getElementById("root"));
 root.render(
   <React.StrictMode>
     <DataLayer initialState={initialState} reducer={reducer}>
