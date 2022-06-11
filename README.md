@@ -1,3 +1,3 @@
 # Spotify clone
 
-I am working on in this project
+I am working on in this project now

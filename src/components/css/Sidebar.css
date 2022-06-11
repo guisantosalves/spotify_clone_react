@@ -6,7 +6,13 @@
     min-width: 230px;
     padding-left: 10px;
     padding-right: 10px;
-    background-color: #040404;   
+    padding-top: 25px;
+    background-color: #040404;
+    overflow-y: overlay; 
+}
+
+.sidebar::-webkit-scrollbar {
+    display: none;
 }
 
 .sidebar__logo{

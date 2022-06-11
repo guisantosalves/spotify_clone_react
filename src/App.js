@@ -14,8 +14,10 @@ const spotify = new SpotifyWebApi();
 
 function App() {
   const [{ user, token }, dispatch] = useDataLayerValue();
+  
   //run code based on a given condition
   useEffect(() => {
+
     const hash = getTokenFromUrl(); // get the hash
     window.location.hash = ""; // remove hash from the url
 
@@ -42,6 +44,14 @@ function App() {
           playlists: playlist,
         });
       });
+
+      spotify.getPlaylist('37i9dQZEVXcRuQcB6ePHgQ').then((discover_weekly)=>{
+        dispatch({
+          type: "SET_DISCOVER_WEEKLY",
+          discover_weekly: discover_weekly,
+        })
+
+      })
     }
   }, []);
 
