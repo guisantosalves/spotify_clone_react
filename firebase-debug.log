@@ -1,0 +1,43 @@
+[debug] [2022-06-13T15:31:43.300Z] ----------------------------------------------------------------------
+[debug] [2022-06-13T15:31:43.303Z] Command:       /home/nutec/.nvm/versions/node/v18.2.0/bin/node /home/nutec/.nvm/versions/node/v18.2.0/bin/firebase deploy
+[debug] [2022-06-13T15:31:43.304Z] CLI Version:   11.0.1
+[debug] [2022-06-13T15:31:43.304Z] Platform:      linux
+[debug] [2022-06-13T15:31:43.305Z] Node Version:  v18.2.0
+[debug] [2022-06-13T15:31:43.305Z] Time:          Mon Jun 13 2022 11:31:43 GMT-0400 (Horário Padrão do Amazonas)
+[debug] [2022-06-13T15:31:43.306Z] ----------------------------------------------------------------------
+[debug] 
+[debug] [2022-06-13T15:31:43.405Z] > command requires scopes: ["email","openid","https://www.googleapis.com/auth/cloudplatformprojects.readonly","https://www.googleapis.com/auth/firebase","https://www.googleapis.com/auth/cloud-platform"]
+[debug] [2022-06-13T15:31:43.406Z] > authorizing via signed-in user (workguisantos@gmail.com)
+[debug] [2022-06-13T15:31:43.406Z] [iam] checking project spotify-clone-aa5b0 for permissions ["firebase.projects.get","firebasehosting.sites.update"]
+[debug] [2022-06-13T15:31:43.409Z] >>> [apiv2][query] POST https://cloudresourcemanager.googleapis.com/v1/projects/spotify-clone-aa5b0:testIamPermissions [none]
+[debug] [2022-06-13T15:31:43.409Z] >>> [apiv2][body] POST https://cloudresourcemanager.googleapis.com/v1/projects/spotify-clone-aa5b0:testIamPermissions {"permissions":["firebase.projects.get","firebasehosting.sites.update"]}
+[debug] [2022-06-13T15:31:44.571Z] <<< [apiv2][status] POST https://cloudresourcemanager.googleapis.com/v1/projects/spotify-clone-aa5b0:testIamPermissions 200
+[debug] [2022-06-13T15:31:44.571Z] <<< [apiv2][body] POST https://cloudresourcemanager.googleapis.com/v1/projects/spotify-clone-aa5b0:testIamPermissions {"permissions":["firebase.projects.get","firebasehosting.sites.update"]}
+[debug] [2022-06-13T15:31:44.574Z] >>> [apiv2][query] GET https://firebase.googleapis.com/v1beta1/projects/spotify-clone-aa5b0 [none]
+[debug] [2022-06-13T15:31:45.759Z] <<< [apiv2][status] GET https://firebase.googleapis.com/v1beta1/projects/spotify-clone-aa5b0 200
+[debug] [2022-06-13T15:31:45.760Z] <<< [apiv2][body] GET https://firebase.googleapis.com/v1beta1/projects/spotify-clone-aa5b0 {"projectId":"spotify-clone-aa5b0","projectNumber":"558951329553","displayName":"spotify-clone","name":"projects/spotify-clone-aa5b0","resources":{"hostingSite":"spotify-clone-aa5b0"},"state":"ACTIVE"}
+[info] 
+[info] === Deploying to 'spotify-clone-aa5b0'...
+[info] 
+[info] i  deploying hosting 
+[debug] [2022-06-13T15:31:45.765Z] >>> [apiv2][query] GET https://firebase.googleapis.com/v1beta1/projects/spotify-clone-aa5b0 [none]
+[debug] [2022-06-13T15:31:46.314Z] <<< [apiv2][status] GET https://firebase.googleapis.com/v1beta1/projects/spotify-clone-aa5b0 200
+[debug] [2022-06-13T15:31:46.314Z] <<< [apiv2][body] GET https://firebase.googleapis.com/v1beta1/projects/spotify-clone-aa5b0 {"projectId":"spotify-clone-aa5b0","projectNumber":"558951329553","displayName":"spotify-clone","name":"projects/spotify-clone-aa5b0","resources":{"hostingSite":"spotify-clone-aa5b0"},"state":"ACTIVE"}
+[debug] [2022-06-13T15:31:46.319Z] >>> [apiv2][query] POST https://firebasehosting.googleapis.com/v1beta1/projects/558951329553/sites/spotify-clone-aa5b0/versions [none]
+[debug] [2022-06-13T15:31:46.319Z] >>> [apiv2][body] POST https://firebasehosting.googleapis.com/v1beta1/projects/558951329553/sites/spotify-clone-aa5b0/versions {"config":{"rewrites":[{"glob":"**","path":"/index.html"}]},"labels":{"deployment-tool":"cli-firebase"}}
+[debug] [2022-06-13T15:31:47.683Z] <<< [apiv2][status] POST https://firebasehosting.googleapis.com/v1beta1/projects/558951329553/sites/spotify-clone-aa5b0/versions 500
+[debug] [2022-06-13T15:31:47.684Z] <<< [apiv2][body] POST https://firebasehosting.googleapis.com/v1beta1/projects/558951329553/sites/spotify-clone-aa5b0/versions {"error":{"code":500,"message":"Internal error encountered.","status":"INTERNAL"}}
+[error] 
+[error] Error: HTTP Error: 500, Internal error encountered.
+[debug] [2022-06-13T15:31:48.015Z] Error Context: {
+  "body": {
+    "error": {
+      "code": 500,
+      "message": "Internal error encountered.",
+      "status": "INTERNAL"
+    }
+  },
+  "response": {
+    "statusCode": 500
+  }
+}
